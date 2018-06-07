@@ -13,25 +13,46 @@ git submodule add https://github.com/Kode/Kha
 git submodule update --init --recursive
 git submodule foreach --recursive git pull origin master
 ```
+ This should work on window 10 64 bit.
 
- Work in progress...
+```
+git clone --recursive https://github.com/Lightnet/KhaEmpty.git
+```
+
+ Just an empty project file that doesn't include.
+```
+git submodule add https://github.com/Kode/Kha
+git submodule update --init --recursive
+git submodule foreach --recursive git pull origin master
+```
+ This init setup kha tools.
  
-# Build html5:
+```
+git submodule foreach --recursive git pull origin master
+```
+ This update builds.
+
+# Nodejs Commands: (Work in progress)
+ 
+## Build html5:
+Current project folder.
+
+# Commannd:
 ```
 node Kha/make html5
 ```
-
-# Command Lines:
- Current project folder.
+ This create haxe project and build folder.
 
 ```
 node Kha/make
 ```
+ This create default project build folder.
 
 ```
 node kha/make html5 --run
 ```
-
-
+ 
 Links:
+ * https://lewislepton.com/learn/khasetup/
+ * http://kha.tech/getstarted
  * http://kha.tech/download (This is just empty project reqiured git to install tool and compiler)
