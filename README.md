@@ -1,5 +1,17 @@
 # Empty Project Test
 
+# Information:
+ Kha can cross-compile your code for this empty project.
+ 
+ * http://kha.tech/
+ * https://github.com/Kode/Kha
+ * https://github.com/Kode/Kha/wiki/Getting-Started
+ * https://github.com/Kode/Kha/wiki/Managing-Your-Assets
+ * https://github.com/Kode/Kha/wiki/System-defines
+ * https://github.com/Kode/Kha/wiki/Libraries
+ * https://github.com/Kode/Kha/wiki/khafile.js
+ * https://github.com/Kode/Kha/wiki/Tutorials
+
 # Setup
  * Install Git
  * Install Nodejs
@@ -30,11 +42,16 @@ git clone --recursive https://github.com/Lightnet/KhaEmpty.git
  It will setup all Kha tools.
 
 # Break Down how it works:
-
+```
+git clone https://github.com/Lightnet/KhaEmpty.git
+```
+ This will just down the project file that it.
+ 
 ```
 git clone --recursive https://github.com/Lightnet/KhaEmpty.git
 ```
- Just an empty project that include the git submodule urls setup kha tools.
+ This will download and setup submodule git urls setup for kha tools.
+ 
 ```
 git submodule add https://github.com/Kode/Kha
 git submodule update --init --recursive
@@ -47,25 +64,39 @@ git submodule foreach --recursive git pull origin master
 ```
  This update builds.
 
-# Nodejs Commands: (Work in progress)
+# Visual Studio Code:
+ If there no error on the git setup. Lanuch Visual Studio Code and install extenisions 'Kha Extension Pack' that will install other packages Kha and Haxe tools.
+
+ Press F5 Key to run debug mode. First time it will likely to fail since it need to build Assets and other things. Run the second time it will work. By default it run [electronjs](https://electronjs.org/) by default browser application. Loading assets file is tricky that I tried different IDE to get it working and this seem to work for now.
+
+# Nodejs Commands:
+ * https://github.com/Kode/Kha/wiki/Examples
  
 ## Build html5:
-Current project folder.
-
-# Commannd:
-```
-node Kha/make html5
-```
- This create haxe project and build folder.
+Current project folder. Notes some commands doesn't work for nodejs.
 
 ```
 node Kha/make
 ```
- This create default project build folder.
+ This will run nodejs and go to Kha folder to run make batch command.
+
+# Commannds: 
 
 ```
-node kha/make html5 --run
+node Kha/make
+node Kha/make --compile
+node Kha/make --run
 ```
+ Default to os build application
+
+```
+node Kha/make //This create default project build folder.
+node Kha/make debug-html5 --run //working
+node Kha/make html5 --run //working
+node Kha/make windows --run //not working? window 10 64 bit.
+```
+ This create haxe project and build folder.
+
  
 Links:
  * https://git-scm.com/docs/git-submodule
